@@ -16,29 +16,34 @@
     <div class="container-fluid">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h1><img src="view/image/dfwconnector/logo.png" alt="" /> <?php echo $heading_title; ?></h1>
+                <div class="row">
+                    <div class="column">
+                        <h1><img src="view/image/dfwconnector/logo.png" alt="" /><?php echo $heading_title; ?></h1>
+                    </div>
+                    <div class="column">
+                        <button id="btn-setup" class="<?php echo $setup_button_class;?> btn-setup">
+                            <?php echo $setup_button; ?>
+                        </button>
+                        <a id="router-link" href="https://app.datafeedwatch.com/v3/en/shopping_cart_router.html?source_name=opencart"
+                            >Go to Datafeedwatch
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="bridge">
                 <div class="message"></div>
-
                 <div class="container">
                     <div class="text-center" id="content-block"></div><br/>
                     <div class="text-center">
-
                         <div class="progress progress-dark progress-small progress-striped active">
                             <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-
                         <div class="store-key">
                             <span class="store-key-title">Your store key:</span>
                             <input class="store-key-content" id="storeKey" title="Your store key" type="text" name="comment" size="40" value="<?php echo $store_key; ?>" readonly>
                             <button id="updateBridgeStoreKey" class="btn-update-store-key">Update Store Key</button>
                         </div>
-
-                        <button id="btn-setup" class="<?php echo $setup_button_class;?> btn-setup"><?php echo $setup_button; ?></button>
-
                     </div>
-
                     <div class="clearfix"></div>
                 </div>
             </div>
