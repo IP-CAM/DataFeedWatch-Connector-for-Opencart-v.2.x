@@ -142,13 +142,9 @@
 .message {
     display: none;
     opacity: 0.9;
-    position: absolute;
-    background: #2876c4;
-    top: 20px;
-    right: 12%;
+    background: #379AFF;
     padding: 15px 30px;
     color: #fff;
-    text-transform: uppercase;
     font-size: 14px;
 }
 
