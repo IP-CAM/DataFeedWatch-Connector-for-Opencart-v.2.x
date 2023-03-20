@@ -15,7 +15,19 @@
     <div class="container-fluid">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h1><img src="view/image/dfwconnector/logo.png" alt="" /> {{ heading_title }}</h1>
+                <div class="row">
+                    <div class="column">
+                        <h1><img src="view/image/dfwconnector/logo.png" alt="" /> {{ heading_title }}</h1>
+                    </div>
+                    <div class="column">                        
+                        <button id="btn-setup" class="{{ setup_button_class }} btn-setup">
+                            {{ setup_button }}
+                        </button>
+                        <a id="router-link" href="https://app.datafeedwatch.com/v3/en/shopping_cart_router.html?source_name=opencart" target="_blank"
+                            >Go to Datafeedwatch
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="bridge">
                 <div class="message"></div>
@@ -23,21 +35,15 @@
                 <div class="container">
                     <div class="text-center" id="content-block"></div><br/>
                     <div class="text-center">
-
                         <div class="bridge-progress bridge-progress-dark bridge-progress-small bridge-progress-striped active">
                             <div class="bridge-progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-
                         <div class="store-key">
                             <span class="store-key-title">Your store key:</span>
                             <input class="store-key-content" id="storeKey" title="Your store key" type="text" name="comment" size="40" value="{{ store_key }}" readonly>
                             <button id="updateBridgeStoreKey" class="btn-update-store-key">Update Store Key</button>
                         </div>
-
-                        <button id="btn-setup" class="{{ setup_button_class }} btn-setup">{{ setup_button }}</button>
-
                     </div>
-
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -61,15 +67,18 @@
         var progress = $('.bridge-progress');
 
         var updateBridgeStoreKey = $('#updateBridgeStoreKey');
+        var routerLink = $('#router-link');
 
         if (storeKey.val() == '') {
             contentBlockManage.html(bridgeNotInstalledMsg);
             storeBlock.fadeOut();
             updateBridgeStoreKey.hide();
+            routerLink.hide();
         } else {
             contentBlockManage.html(bridgeInstalledMsg);
             storeBlock.fadeIn();
             updateBridgeStoreKey.show();
+            routerLink.show();
         }
 
         function statusMessage(message, status) {
@@ -123,6 +132,7 @@
 
                         storeBlock.fadeIn("slow");
                         updateBridgeStoreKey.fadeIn("slow");
+                        routerLink.fadeIn("slow");
                         statusMessage('Connector Installed Successfully','success');
                     } else {
                         if (data.result != true) {
@@ -137,6 +147,7 @@
                         contentBlockManage.html(bridgeNotInstalledMsg);
                         storeBlock.fadeOut("fast");
                         updateBridgeStoreKey.fadeOut("fast");
+                        routerLink.fadeOut("fast");
                         statusMessage('Connector Uninstalled Successfully','success');
                     }
                 }

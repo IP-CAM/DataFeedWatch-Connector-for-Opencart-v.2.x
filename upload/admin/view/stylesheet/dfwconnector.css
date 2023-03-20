@@ -1,4 +1,71 @@
-.bridge{
+.panel-heading .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+}
+
+.panel-heading .row .column {
+    width: 50%;
+    min-width: 450px;
+    display: flex;
+}
+
+.panel-heading .row .column:last-child {
+    justify-content: flex-end;
+}
+
+.panel-heading .row .column:last-child a,
+.panel-heading .row .column:last-child button {
+    height: 52px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-left: 20px;
+    border: none;
+    box-shadow: none;
+    min-width: 195px;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.panel-heading #btn-setup {
+    background-color: #B6B7B9;
+}
+
+.panel-heading #btn-setup:hover {
+    background-color: #60656c;
+}
+
+.panel-heading #router-link {
+    background-color: #379AFF;
+}
+
+.panel-heading #router-link:hover {
+    background-color: #0074c7;
+}
+
+.panel-heading #btn-setup:disabled,
+.panel-heading #btn-setup:disabled:hover,
+.panel-heading #router-link:disabled,
+.panel-heading #router-link:disabled:hover {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.bridge {
     margin: 20px 0;
     padding: 0 20px;
     font-family: "Open Sans", Arial, sans-serif;
@@ -7,60 +74,83 @@
     line-height: 1.5;
     position: relative;
 }
-.bridge p{
+
+.bridge p {
     font-size: 14px;
+    line-height: 16px;
     font-weight: 400;
+    margin-bottom: 20px;
 }
 
-.bridge .text-center{
+.bridge .text-center {
     text-align: center;
 }
-.bridge .space-top{
-    margin-top: 15px
-}
-.bridge .space-bottom{
-    margin-bottom: 15px
-}
 
-.bridge .container{
+.bridge .container {
     background: #fff;
     border: 1px solid #e1e1e1;
     padding: 40px 20px;
-    margin: 20px 5%;
     overflow: hidden;
+    width: 100%;
 }
 
-.bridge .store-key{
+.bridge .store-key {
     display: none;
 }
 
-.bridge .store-key span{
+.bridge .store-key span.store-key-title {
+    margin: 0 5px;
     display: inline-block;
-}
-
-.bridge .store-key-title{
     font-weight: 600;
     text-transform: uppercase;
 }
 
-.bridge .store-key-content{
+.bridge .store-key input.store-key-content {
+    margin: 0 5px 15px;
+    font-size: 14px;
+    padding: 13px;
     min-width: 300px;
+}
 
+.bridge .store-key button.btn-update-store-key {
+    display: inline-block;
+    margin: 0 5px;
+    height: 52px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #379AFF;
+    background-color: #fff;
+    white-space: nowrap;
+    border: 1px solid #379AFF;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.bridge .store-key button.btn-update-store-key:hover {
+    background-color: #379AFF;
+    color: #fff;;
 }
 
 .message {
     display: none;
     opacity: 0.9;
-    position: absolute;
-    background: #2876c4;
-    top: 20px;
-    right: 12%;
+    background: #379AFF;
     padding: 15px 30px;
     color: #fff;
-    text-transform: uppercase;
     font-size: 14px;
 }
-.message.bridge_error { background: #F05657; }
+
+.message.bridge_error { 
+    background: #F05657;
+}
 
 .clearfix:after {
     content: "";
@@ -71,93 +161,16 @@
     height: 0;
 }
 
-.btn-connect,
-.btn-disconnect,
-.btn-update-store-key{
-    border: 0;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 5px 15px;
-    text-decoration:none;
-    outline: none;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
-.btn-connect,
-.btn-disconnect{
-    background-color: #2876c4;
-    min-width: 190px;
-    padding: 15px 50px;
-    margin: 15px 0;
-}
-.btn-disconnect{
-    background-color: #4f5459;
-}
-
-.btn-update-store-key {
-    font-size: 11px;
-    border: 1px solid #989FA7;
-    background-color: #fff;
-    color: #4f5459;
-}
-
-.btn-connect:hover,
-.btn-update-store-key:hover{
-    outline: none;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
-.btn-update-store-key:hover{
-    background-color: #4f5459;
-    color: #fff;
-}
-
-.btn-connect:hover{
-    background-color: #3782d3;
-}
-
-.btn-disconnect:hover{
-    background-color: #60656c;
-}
-
-.btn-connect:active,
-.btn-disconnect:hover:active,
-.btn-update-store-key:active{
-    position:relative;
-    top:1px;
-}
-.btn-connect:disabled,
-.btn-connect:disabled:hover {
-    background-color: #3782d3;
-    opacity: 0.5;
-    cursor: default;
-}
-
-.btn-disconnect:disabled,
-.btn-disconnect:disabled:hover {
-    background-color: #60656c;
-    opacity: 0.5;
-    cursor: default;
-}
-
 @-webkit-keyframes progress-bar-stripes {
     from {background-position: 0 0;}
     to {background-position: 40px 0;}
 }
+
 @keyframes progress-bar-stripes {
     from {background-position: 0 0;}
     to {background-position: 40px 0;}
 }
+
 .bridge-progress {
     display: none;
     max-width: 600px;
@@ -166,9 +179,11 @@
     height: 12px;
     background-color: #DCE0E3;
 }
+
 .bridge-progress-dark {
     background-color: #4D575F;
 }
+
 .bridge-progress-bar {
     float: left;
     width: 100%;
@@ -188,11 +203,14 @@
     background-image: linear-gradient(-45deg, #f1f1f1 25%, transparent 25%, transparent 50%, #f1f1f1 50%, #f1f1f1 75%, transparent 75%, transparent);
     background-size: 40px 40px;
 }
+
 .bridge-progress.active .progress-bar {
     -webkit-animation: progress-bar-stripes 2s linear infinite;
     animation: progress-bar-stripes 2s linear infinite;
 }
 
-#content-block-manage {
-    text-align: left;
+#content-block {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto;
 }
