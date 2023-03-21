@@ -209,8 +209,8 @@
     animation: progress-bar-stripes 2s linear infinite;
 }
 
-#content-block-manage {
-    text-align: left;
+#content-block {
+    text-align: center;
     max-width: 750px;
     margin: 0 auto;
 }

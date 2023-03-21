@@ -24,7 +24,7 @@
                         <button id="btn-setup" class="<?php echo $setup_button_class;?> btn-setup">
                             <?php echo $setup_button; ?>
                         </button>
-                        <a id="router-link" href="https://app.datafeedwatch.com/v3/en/shopping_cart_router.html?source_name=opencart"
+                        <a id="router-link" href="https://app.datafeedwatch.com/v3/en/shopping_cart_router.html?source_name=opencart" target="_blank"
                             >Go to Datafeedwatch
                         </a>
                     </div>
